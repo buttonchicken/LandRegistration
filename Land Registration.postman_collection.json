@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "6d85a68a-3a7b-4797-b9ce-8049408efae3",
+		"name": "Land Registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17435228"
+	},
+	"item": [
+		{
+			"name": "Send OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"aditya.mutharia@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/send_otp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"send_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login for new User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"aditya.mutharia@gmail.com\",\n    \"existing_user\": false,\n    \"otp\":\"9920\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/authorize",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"authorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login for exisiting User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"aditya.mutharia@gmail.com\",\n    \"existing_user\": false,\n    \"otp\":\"9920\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/authorize",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"authorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"admin_UUID\":\"498c5593-0908-4fc8-b47e-bcf6bd736182\",\n    \"owner_UUID\":\"08ab283e-3b42-4193-9fef-c5c730676da4\",\n    \"token_id\":\"12345\",\n    \"area_code\":\"12\",\n    \"city\":\"Agra\",\n    \"state\":\"UP\",\n    \"category\":\"test\",\n    \"district\":\"test-district\",\n    \"sub_registrar_office\":\"test-sro\",\n    \"village\":\"tvillage\",\n    \"ward_no\":\"100\",\n    \"total_extend\":\"100\",\n    \"extend_of_land\":\"1001\",\n    \"street_name\":\"test-street\",\n    \"door_no\":\"12\",\n    \"house_no\":\"876\",\n    \"dimension\":\"12x14ft\",\n    \"metadata\":\"test-url\",\n    \"in_marketplace\":false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/address/insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"address",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Capture Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"admin_UUID\":\"498c5593-0908-4fc8-b47e-bcf6bd736182\",\n    \"owner_UUID\":\"08ab283e-3b42-4193-9fef-c5c730676da4\",\n    \"token_id\":\"12345\",\n    \"area_code\":\"12\",\n    \"city\":\"Agra\",\n    \"state\":\"UP\",\n    \"category\":\"test\",\n    \"district\":\"test-district\",\n    \"sub_registrar_office\":\"test-sro\",\n    \"village\":\"tvillage\",\n    \"ward_no\":\"100\",\n    \"total_extend\":\"100\",\n    \"extend_of_land\":\"1001\",\n    \"street_name\":\"test-street\",\n    \"door_no\":\"12\",\n    \"house_no\":\"876\",\n    \"dimension\":\"12x14ft\",\n    \"metadata\":\"test-url\",\n    \"in_marketplace\":false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/address/insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"address",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add in markeplace",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzODQxNzY2LCJpYXQiOjE2ODEyNDk3NjYsImp0aSI6IjliM2ZmM2M1MTkwNTQ5ZTRhMDVlZTdkZTI3ODgwZjAyIiwidXNlcm5hbWUiOiI4ODAwODI1MTYzIn0.GTrZ2SVDwgPIKzIXTaA7YzRCvfdKWCXFMUFyObnsRKU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Gurugaon ki kothi",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "token_id",
+							"value": "ksjdfbk1",
+							"type": "text"
+						},
+						{
+							"key": "image_file",
+							"type": "file",
+							"src": "/home/buttonchicken/Pictures/Screenshot from 2022-11-25 15-50-11.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/market/insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"market",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Marketplace",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzODQxNzY2LCJpYXQiOjE2ODEyNDk3NjYsImp0aSI6IjliM2ZmM2M1MTkwNTQ5ZTRhMDVlZTdkZTI3ODgwZjAyIiwidXNlcm5hbWUiOiI4ODAwODI1MTYzIn0.GTrZ2SVDwgPIKzIXTaA7YzRCvfdKWCXFMUFyObnsRKU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Gurugaon ki kothi",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "token_id",
+							"value": "ksjdfbk1",
+							"type": "text"
+						},
+						{
+							"key": "image_file",
+							"type": "file",
+							"src": "/home/buttonchicken/Pictures/Screenshot from 2022-11-25 15-50-11.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/market/insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"market",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
