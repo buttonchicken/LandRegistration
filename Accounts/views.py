@@ -8,6 +8,7 @@ from .serializers import *
 from django.utils import timezone
 from .tasks import mail_otp
 from django.db import IntegrityError
+from django.contrib.auth import authenticate
 
 class SendOTP(APIView):
     def post(self,request):
@@ -71,3 +72,17 @@ class Authorize(APIView):
             #invalid otp
             return Response({"success":False, "message":"Invalid OTP"},status=status.HTTP_400_BAD_REQUEST)
 
+class AdminLogin(APIView):
+    def get(self,request):
+        try:
+            data = request.data
+            usrnm = data['username']
+            pswd = data['password']
+            user=authenticate(username=usrnm, password=pswd)
+            if user is not None:
+                serializer = UserSerailizer(user)
+                return Response({'success':True,'payload':serializer.data},status=status.HTTP_202_ACCEPTED)
+            else:
+                return Response({"success":False, "message":"Invalid Credentials"},status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response({"success":False, "message":"Please enter username and password"},status=status.HTTP_400_BAD_REQUEST)

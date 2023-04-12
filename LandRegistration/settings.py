@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'LandRegistration',
     'Marketplace',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -189,3 +190,5 @@ EMAIL_HOST_PASSWORD = 'fydqvuoljaadwpkw'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CSRF_TRUSTED_ORIGINS = ['https://8e41-14-139-175-163.ngrok-free.app']

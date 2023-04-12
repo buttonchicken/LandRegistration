@@ -27,8 +27,8 @@ class Insert_Property(APIView):
             return Response({'success':False,'message':'Please enter all the data'},status=status.HTTP_400_BAD_REQUEST)
 
 class ViewMarketplace(APIView):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated]
     def get(self,request):
         try:
             maketplace_objs = Marketplace.objects.all()
